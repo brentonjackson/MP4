@@ -8,15 +8,15 @@ leaguePath = sys.argv[1]
 
 with open(leaguePath) as f:
         #TODO
-        leaguePages = f.read().split()
-
+        leaguePages = [int(line.strip()) for line in f]
 for line in sys.stdin:
-
        #TODO
+        line = line.strip()
+        if line.isspace():
+                continue
         parts = line.split()
         if len(parts) != 2:
                 continue
         link, linkCount = parts
-        if link in leaguePages:
-                print(line)
-       # print('%s\t%s' % (  ,  )) pass this output to reducer
+        if int(link) in leaguePages:
+                print('%s\t%s' % (link, linkCount))

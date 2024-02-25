@@ -12,7 +12,7 @@ for line in sys.stdin:
         id, score = parts
         data.append((id, float(score)))
 #TODO sort data
-sorted_data = sorted(data, key=lambda x: x[1])
+sorted_data = sorted(data, key=lambda x: x[1], reverse=True)
 top_10 = sorted_data[-10:]
 for item in top_10:
         print(item[0])
